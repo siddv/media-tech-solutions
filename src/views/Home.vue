@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="home" :style="{backgroundColor: randomColor}">
+    <MtsLogo class="logo"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import MtsLogo from '@/components/MtsLogo.vue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    MtsLogo,
+  },
+  computed: {
+    randomColor: () => `#${Math.floor(Math.random() * 16777215).toString(16)}`,
   },
 };
 </script>
+
+<style lang="scss" scoped>
+  .logo {
+    left: 50%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+</style>
+
