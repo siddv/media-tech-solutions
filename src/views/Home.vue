@@ -1,5 +1,5 @@
 <template>
-  <div class="home" :style="{backgroundColor: randomColor}">
+  <div class="home">
     <MtsLogo class="logo"/>
   </div>
 </template>
@@ -13,20 +13,27 @@ export default {
   components: {
     MtsLogo,
   },
-  computed: {
-    randomColor: () => `#${Math.floor(Math.random() * 16777215).toString(16)}`,
-  },
 };
 </script>
 
 <style lang="scss" scoped>
-  .logo {
-    left: 50%;
-    max-width: 400px;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  .home {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
     width: 100%;
+  }
+
+  .logo {
+    animation: 500s linear infinite slotate;
+    max-width: 400px;
+    width: 100%;
+  }
+
+  @keyframes slotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
   }
 </style>
 

@@ -6,12 +6,12 @@
 
 <style lang="scss" scoped>
     .wrap {
-        padding: 20px;
+        padding: 1rem;
 
         img {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.15);
             display: block;
-            padding: 20px;
+            padding: 1rem;
             width: 100%;
         }
     }
