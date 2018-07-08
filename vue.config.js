@@ -3,7 +3,7 @@ var path = require('path')
 
 module.exports = {
   configureWebpack: config => {
-    if (process.env.NODE_ENV !== 'production') return
+    if (process.env.PRERENDER !== 'true') return
 
     return {
       plugins: [
